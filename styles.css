@@ -297,19 +297,39 @@ nav li a:hover {
     background: var(--tangerine); 
 }
 
+#html::-webkit-progress-value { 
+    background: var(--tangerine);
+}
+
 #css::-webkit-progress-value { 
     background: hsl(211, 100%, 50%); 
+}
+
+#css::-moz-progress-bar {
+    background: hsl(211, 100%, 50%);
 }
 
 #bootstrap::-webkit-progress-value { 
     background: hsl(263, 90%, 51%); 
 }
 
+#bootstrap::-moz-progress-bar {
+    background: hsl(263, 90%, 51%);
+}
+
 #javascript::-webkit-progress-value { 
     background: hsl(56, 100%, 50%); 
 }
 
+#javascript::-moz-progress-bar { 
+    background: hsl(56, 100%, 50%); 
+}
+
 #php::-webkit-progress-value {
+    background: hsl(238, 45%, 50%);
+}
+
+#php::-moz-progress-bar {
     background: hsl(238, 45%, 50%);
 }
 
