@@ -297,7 +297,7 @@ nav li a:hover {
     background: var(--tangerine); 
 }
 
-#html::-webkit-progress-value { 
+#html::-moz-progress-bar { 
     background: var(--tangerine);
 }
 
