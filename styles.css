@@ -2,8 +2,10 @@
 
 
 :root {
-    --light-bg: hsl(0, 0%, 98%);
-    --tangerine: hsl(24, 100%, 50%);
+    --bg-color: hsl(0, 0%, 98%);
+    --header-bg: hsl(0, 0%, 100%);
+    --btn-bg: hsl(24, 100%, 50%);
+    --text-color: hsl(0, 0%, 10%);
 
     --roboto-font: 'Roboto';
     --andale-font: 'Andale Mono';
@@ -27,7 +29,7 @@ html {
 
 body {
     font-size: 16px;
-    background-color: var(--light-bg);
+    background-color: var(--bg-color);
 }
 
 .section-padding {
@@ -41,6 +43,10 @@ hr {
 }
 
 /* Text stlying */
+
+body:has(h1) {
+    color: var(--text-color);
+}
 
 .main-heading {
     font-size: 3rem;
@@ -84,23 +90,131 @@ hr {
     width: fit-content;
     padding: 1em;
 
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
     text-align: center;
     letter-spacing: 0.1rem;
 
     border-radius: 5px;
-    background-color: var(--tangerine);
+    background-color: var(--btn-bg);
     box-shadow: 0 5px 15px 0 rgb(0 0 0 / 15%);
     transition: 250ms ease-out;
 }
 
 .btn:hover {
-    background-color: var(--light-bg);
-    outline: 2px solid var(--tangerine);
+    background-color: var(--bg-color);
+    outline: 2px solid var(--btn-bg);
 }
 
-/* Navigation bar styling */
+/* Color Theme Styling */
+
+.color-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 3rem;
+    aspect-ratio: 1;
+  }
+  
+  .color-switch {
+    z-index: 10;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .color-switch:focus {
+    outline: 0;
+  }
+  
+  .color-switch {
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+  }
+  
+  :root:has(.color-switch:checked) {
+    --bg-color: hsl(0, 0%, 10%);
+    --header-bg: hsl(0, 0%, 5%);
+    --text-color: hsl(0, 0%, 95%);
+    --btn-bg: hsl(267, 95%, 76%);
+    --clock-shadow: hsl(258, 100%, 35%);
+  }
+
+  .moon {
+    position: relative;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 98%);
+    display: none;
+  }
+  
+  .moon-inner-circle {
+    position: absolute;
+    width: 1.125rem;
+    aspect-ratio: 1;
+    top: 0;
+    left: 40%;
+    border-radius: 50%;
+    background-color: var(--header-bg);
+  }
+  
+  .sun {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: relative;
+    width: 0.5rem;
+    aspect-ratio: 1;
+  
+    outline: 2px solid var(--bg-color);
+    border-radius: 50%;
+    background-color: black;
+  }
+  
+  .sun,
+  .moon {
+    transition: transform 500ms ease-out;
+  }
+  
+  .color-picker:hover .sun,
+  .color-picker:hover .moon {
+    transform: translateY(-5px);
+  }
+  
+  .sun-line {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+  
+    z-index: -1;
+  
+    background-color: black;
+  }
+  
+  .deg45 {
+    transform: rotate(45deg);
+  }
+  
+  .deg90 {
+    transform: rotate(90deg);
+  }
+  
+  .deg135 {
+    transform: rotate(135deg);
+  }
+  
+  .color-picker:has(.color-switch:checked) .sun {
+    display: none;
+  }
+  
+  .color-picker:has(.color-switch:checked) .moon {
+    display: block;
+  }
+
+/* Navigation Bar Styling */
 
 header {
     display: flex;
@@ -113,13 +227,18 @@ header {
 
     position: fixed;
     z-index: 100;
-    background-color: white;
+    background-color: var(--header-bg);
+}
+
+.logo-theme-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo {
-    width: 4rem;
-    aspect-ratio: 1/1;
-}
+    fill: var(--text-color);
+  }
 
 nav {
     display: flex;
@@ -136,13 +255,13 @@ nav ul {
 }
 
 nav a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
     transition: color 500ms ease-out;
 }
 
 nav li a:hover {
-    color: var(--tangerine);
+    color: var(--btn-bg);
 }
 
 .icons {
@@ -156,7 +275,8 @@ nav li a:hover {
 /* Mobile navigation dropdown */
 
 .mobile-nav-toggle,
-.mobile-header {
+.mobile-header,
+.mobile-close {
     display: none;
 }
 
@@ -172,7 +292,7 @@ nav li a:hover {
         width: 100%;
         height: 6rem;
 
-        background-color: white;
+        background-color: var(--header-bg);
     }
 
     .site-navigation {
@@ -183,7 +303,7 @@ nav li a:hover {
         position: fixed;
         z-index: 1000;
         inset: 0;
-        background-color: white;
+        background-color: var(--header-bg);
 
         transform: translateY(-100%);
         transition: transform 500ms ease;
@@ -193,7 +313,7 @@ nav li a:hover {
         transform: translateY(0%);
     }
 
-    .logo-container {
+    .logo-theme-container {
         position: absolute;
         z-index: 1030;
         top: 1rem;
@@ -205,20 +325,23 @@ nav li a:hover {
         position: absolute;
         z-index: 1020;
 
+        stroke: var(--text-color);
+
         width: 2rem;
         aspect-ratio: 1;
         cursor: pointer;
-        top: 2.5rem;
+        top: 2rem;
         right: 1rem;
-        background-image: url("images/toggle/hamburger.png");
-        background-repeat: no-repeat;
-        background-color: transparent;
         border: 0;
+        background-color: transparent;
     }
 
-    .mobile-nav-toggle[aria-expanded="true"] {
-        background-image: url("images/toggle/close.png");
-        background-repeat: no-repeat;
+    .mobile-nav-toggle[aria-expanded="true"] .mobile-close {
+        display: block;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] .mobile-hamburger {
+        display: none;
     }
 
     .section-padding {
@@ -303,7 +426,7 @@ nav li a:hover {
 
 .html { 
     width: 90%;
-    background-color: var(--tangerine); 
+    background-color: hsl(24, 100%, 50%); 
 }
 
 .css { 
@@ -330,8 +453,8 @@ nav li a:hover {
     width: 100%;
     padding: 1rem;
 
-    color: var(--light-bg);
-    background-color: hsl(0, 0%, 20%);
+    color: var(--bg-color);
+    background-color: var(--text-color);
 }
 
 .degree-container h3 {
@@ -440,10 +563,10 @@ textarea {
     transition: border-bottom 250ms ease-out;
 }
 
-input:focus,
+.contact-form input:focus,
 textarea:focus {
     outline: none;
-    border-bottom: 3px solid var(--tangerine);
+    border-bottom: 3px solid var(--btn-bg);
 }
 
 #name,
