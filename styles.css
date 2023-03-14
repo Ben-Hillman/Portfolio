@@ -468,6 +468,7 @@ nav li a:hover {
     gap: 2rem;
 
     width: 100%;
+    height: 31.25rem;
 }
 
 .projects-content-container:not(:first-of-type) {
@@ -476,11 +477,12 @@ nav li a:hover {
 
 .projects-image-container {
     width: 70%;
+    height: 100%;
 }
 
 .projects-image {
     width: 100%;
-    height: 27rem;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -514,9 +516,6 @@ nav li a:hover {
 
     .projects-image-container {
         width: 100%;
-    }
-
-    .projects-image {
         height: 10rem;
     }
 
