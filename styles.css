@@ -512,6 +512,7 @@ nav li a:hover {
 @media (max-width: 900px) {
     .projects-content-container {
         flex-direction: column;
+        height: 100%;
     }
 
     .projects-image-container {
