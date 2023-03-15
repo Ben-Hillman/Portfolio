@@ -25,3 +25,20 @@ navToggle.addEventListener("click", () => {
         });
       }
 });
+
+const storeCheckboxStatus = () => {
+  let checkbox = document.querySelector(".color-switch");
+  localStorage.setItem("checkbox", checkbox.checked);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let checkbox = document.querySelector(".color-switch");
+
+  // check if checkbox status is stored in local storage
+  if (localStorage.getItem("checkbox")) {
+    checkbox.checked = JSON.parse(localStorage.getItem("checkbox"));
+  }
+
+  // add event listener to store checkbox status on click
+  checkbox.addEventListener("click", storeCheckboxStatus);
+});
