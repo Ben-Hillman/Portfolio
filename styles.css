@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
 :root {
     --bg-color: hsl(0, 0%, 98%);
     --header-bg: hsl(0, 0%, 100%);
@@ -14,10 +13,86 @@
 }
 
 /* Style reset */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* On Scroll Styling */
+
+/* text on scroll */
+
+.text-hidden {
+    opacity: 0;
+    filter: blur(3px);
+
+    transform: translateX(-100%);
+    transition: 3s cubic-bezier(.33,0,.47,1);
+}
+
+.text-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.home-content > .headshot-container {
+    transition-delay: 100ms;
+}
+
+.home-content > .main-heading {
+    transition-delay: 200ms;
+}
+
+.home-content > p {
+    transition-delay: 600ms;
+}
+
+.home-content > .btn {
+    transition-delay: 4s;
+    transition-property: opacity, filter, transform;
+}
+
+/* skillbar on scroll */
+
+.skillbar-hidden {
+    width: 0%;
+
+    transition: width 3s cubic-bezier(.33,0,.47,1);
+}
+
+.skillbar-visible {
+    width: 100%;
+}
+
+.html > .skillbar-visible {
+    width: 90%;
+    background-color: hsl(24, 100%, 50%);
+}
+
+.css > .skillbar-visible {
+    width: 90%;
+    background-color: hsl(211, 100%, 50%);
+    transition-delay: 200ms;
+}
+
+.bootstrap > .skillbar-visible { 
+    width: 40%;
+    background-color: hsl(263, 90%, 51%); 
+    transition-delay: 400ms;
+}
+
+.javascript > .skillbar-visible { 
+    width: 50%;
+    background-color: hsl(55, 90%, 50%); 
+    transition-delay: 600ms;
+}
+.php > .skillbar-visible {
+    width: 25%;
+    background-color: hsl(238, 45%, 50%);
+    transition-delay: 800ms;
 }
 
 /* Misc stlyes */
@@ -29,6 +104,7 @@ html {
 
 body {
     font-size: 16px;
+    color: var(--text-color);
     background-color: var(--bg-color);
 }
 
@@ -43,10 +119,6 @@ hr {
 }
 
 /* Text stlying */
-
-body:has(h1) {
-    color: var(--text-color);
-}
 
 .main-heading {
     font-size: 3rem;
@@ -118,6 +190,9 @@ body:has(h1) {
   }
   
   .color-switch {
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
     z-index: 10;
     appearance: none;
     cursor: pointer;
@@ -125,12 +200,6 @@ body:has(h1) {
   
   .color-switch:focus {
     outline: 0;
-  }
-  
-  .color-switch {
-    position: absolute;
-    width: 2rem;
-    aspect-ratio: 1;
   }
   
   :root:has(.color-switch:checked) {
@@ -175,13 +244,20 @@ body:has(h1) {
   }
   
   .sun,
-  .moon {
-    transition: transform 500ms ease-out;
+  .moon,
+  .sun-line {
+    transition: 500ms ease-out;
+  }
+
+  .color-picker:hover .sun,
+  .color-picker:hover .moon {
+    transform: translateY(-10px);
   }
   
   .color-picker:hover .sun,
-  .color-picker:hover .moon {
-    transform: translateY(-5px);
+  .color-picker:hover .moon,
+  .color-picker:hover .sun-line {
+    background-color: var(--btn-bg);
   }
   
   .sun-line {
@@ -422,31 +498,6 @@ nav li a:hover {
     position: absolute;
 
     height: 100%;
-}
-
-.html { 
-    width: 90%;
-    background-color: hsl(24, 100%, 50%); 
-}
-
-.css { 
-    width: 90%;
-    background-color: hsl(211, 100%, 50%); 
-}
-
-.bootstrap { 
-    width: 50%;
-    background-color: hsl(263, 90%, 51%); 
-}
-
-.javascript { 
-    width: 50%;
-    background-color: hsl(56, 95%, 50%); 
-}
-
-.php {
-    width: 25%;
-    background-color: hsl(238, 45%, 50%);
 }
 
 .degree-container {
