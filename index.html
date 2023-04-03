@@ -1,51 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Portfolio</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/ccdc89c58c.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Front End Developer from Ohio,
+    with experience creating
+    stunning sites in
+    HTML5, CSS, & Javascript.">
+    <meta name="author" content="Ben Hillman">
+    <title>Ben Hillman | Frontend Web Developer</title>
     <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-    <script src="main.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ccdc89c58c.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
 </head>
-<body class="home">
-    <header class="header__navigation">
-        <a href="index.html"><img id="logo" src="images/logo/dark-logo.png" /></a>
+<body>
+    <header>
+        <div class="logo-theme-container">
+            <svg class="logo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M64 0H0V64H64V0ZM15.6966 33.4959V39.1923H19.9428C20.8165 39.1923 21.5271 39.0714 22.0747 38.8297C22.6222 38.5879 23.0241 38.2605 23.2804 37.8475C23.5367 37.4345 23.6648 36.9712 23.6648 36.4574C23.6648 35.853 23.5425 35.3292 23.2979 34.886C23.0649 34.4428 22.6921 34.1003 22.1795 33.8585C21.6786 33.6168 21.0087 33.4959 20.17 33.4959H15.6966ZM25.1874 31.7146C25.4287 31.633 25.6551 31.5418 25.8666 31.4409C26.8801 30.9574 27.614 30.3278 28.0683 29.5522C28.5343 28.7766 28.7673 27.9405 28.7673 27.044C28.7673 26.0165 28.5459 25.125 28.1033 24.3695C27.6606 23.614 27.014 22.9844 26.1636 22.4808C25.3249 21.9771 24.3055 21.6044 23.1056 21.3626C21.9057 21.1209 20.5428 21 19.0167 21L9.77335 21.2267V32.2267V43.2267L15.6966 43H19.9428C21.9815 43 23.6939 42.7582 25.0802 42.2747C26.4782 41.7912 27.5324 41.071 28.243 40.114C28.9537 39.147 29.309 37.9483 29.309 36.5179C29.309 35.6516 29.0935 34.8306 28.6624 34.0549C28.2314 33.2793 27.5266 32.6548 26.548 32.1813C26.1498 31.9822 25.6963 31.8266 25.1874 31.7146ZM18.9992 30.2019C19.9545 30.2019 20.7291 30.1012 21.3233 29.8997C21.929 29.6983 22.3717 29.4061 22.6513 29.0234C22.9309 28.6305 23.0707 28.147 23.0707 27.5728C23.0707 26.918 22.9309 26.3892 22.6513 25.9863C22.3717 25.5833 21.929 25.2912 21.3233 25.1099C20.7291 24.9185 19.9603 24.8228 19.0167 24.8228H15.6966V30.2019H18.9992ZM47.25 33.6621H40V43H32.996V21H40V29.8544H47.25V21H54V43H47.25V33.6621Z" />
+            </svg>                
+            <form class="color-picker">
+                <input class="color-switch" type="checkbox" >
+                <div class="sun">
+                  <div class="sun-line deg0"></div>
+                  <div class="sun-line deg45"></div>
+                  <div class="sun-line deg90"></div>
+                  <div class="sun-line deg135"></div>
+                </div>
+                <div class="moon">
+                  <div class="moon-inner-circle"></div>
+                </div>
+              </form>
+        </div>
+        <div class="mobile-header"></div>
         <nav>
-            <ul id="site__navigation" class="site__navigation" data-visible="false">
-                <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
-                <a href="mailto:benhillman10@gmail.com?subject=BenHillman.com Contact Form" target="_blank">Contact</a>
+            <ul class="site-navigation andale uppercase" data-visible="false">
+                <li class="nav-link"><a href="#home">Home</a></li>
+                <li class="nav-link"><a href="#about">About</a></li>
+                <li class="nav-link"><a href="#projects">Projects</a></li>
+                <li class="nav-link"><a href="#contact">Contact</a></li>
+                <div class="icons">
+                    <a href="https://codepen.io/Ben-Hillman" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+                    <a href="https://www.linkedin.com/in/benhillman" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Ben-Hillman" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
             </ul>
         </nav>
-        <button class="mobile__nav__toggle" aria-controls="site__navigation" aria-expanded="false"></button>
+        
+        <button class="mobile-nav-toggle" aria-controls="site-navigation" aria-expanded="false">
+            <svg class="mobile-hamburger" width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 2H32" stroke-width="3"/>
+                <path d="M6 11H32" stroke-width="3"/>
+                <path d="M12 20H32" stroke-width="3"/>
+            </svg>   
+            <svg class="mobile-close" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2L24 24" stroke-width="3"/>
+                <path d="M2 24L24 2" stroke-width="3"/>
+            </svg>                 
+        </button>
     </header>
     <main>
-        <section class="home__information">
-            <div id="headshot">
-                <img id="headshot-picture" src="images/headshot/headshot.jpg">
-            </div>
-            <h1>Ben Hillman</h1>
-            <article>
-                <h2>front-end developer</h2>
-                <p>A developer from Ohio,<br>
-                with experience in<br>
-                creating stunning sites using<br>
-                HTML5, CSS, & Javascript.</p>
-            </article>
-            <a href="https://drive.google.com/file/d/1iVFWjvT_BRc3DyDjC2RpInaYotbG566J/view?usp=sharing" target="_blank">Download my resume</a>
-            <div class="brand-icons">
-                <a href="https://codepen.io/Ben-Hillman" target="_blank"><i class="fa-brands fa-codepen"></i></a>
-                <a href="https://github.com/Ben-Hillman" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/benhillman" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <section id="home" class="section-padding">
+            <div class="home-content">
+                <div class="headshot-container text-hidden"><img class="headshot" alt="A headshot of Ben Hillman in a blue suit." src="images/headshot/headshot.jpg"/></div>
+                <h1 class="main-heading roboto text-hidden">Hi, I'm Ben Hillman</h1>
+                <p class="andale text-hidden">A Front End Developer from Ohio,<br>
+                        with experience creating<br>
+                        stunning sites in<br>
+                        HTML5, CSS, & Javascript.</p>
+                <a class="btn roboto uppercase bold text-hidden" href="#projects">Projects</a>
             </div>
         </section>
-        <nav class="home__navigation">
-            <h2><a href="projects.html">Projects</a></h2>
-            <h2><a href="about.html">About</a></h2>
-            <h2><a href="mailto:benhillman10@gmail.com?subject=BenHillman.com Contact Form" target="_blank">Contact</a></h2>
-        </nav>
+        <hr>
+        <section id="about" class="section-padding">
+            <h2 class="section-subheading roboto uppercase">About me</h2>
+            <div class="about-content">
+                <div class="about-content-info">
+                    <h3 class="content-subheading roboto">Who am I?</h3>
+                    <p class="andale">I’m a Front-End Developer located
+                        in the Urbana, Ohio region.
+                        I have a strong skillset in 
+                        HTML5, CSS, and Javascript. 
+                        Over time, I have honed my 
+                        skills and developed a 
+                        keen eye for design, layout, 
+                        and user experience.<br><br>
+
+                        In my spare time, I enjoy meeting new people,
+                        anything cars, snowboarding, 
+                        and playing all types of video games.<br><br>
+                        
+                        My goal is to work my way up to 
+                        becoming a full-stack developer 
+                        by building and launching high-quality 
+                        applications that leverage the latest 
+                        web technologies.<br><br>
+                         
+                        I am excited to contribute to the rapidly 
+                        evolving world of web development and to 
+                        collaborate with other professionals 
+                        who share my passion for this field.<br><br>
+                        
+                        I am always open to new opportunities that
+                        allow me to learn and grow as a human and a web developer.
+                    </p>
+                    <a class="roboto" href="https://drive.google.com/file/d/1iVFWjvT_BRc3DyDjC2RpInaYotbG566J/view?usp=sharing" target="_blank">Download my resume</a>
+                    <a class="btn roboto uppercase bold" href="#contact">Contact</a>
+                </div>
+                <div class="about-content-skills">
+                    <h3 class="content-subheading roboto">Skills</h3>
+                    <div class="about-content-skillbars">
+                        <span class="andale uppercase">Html 5</span>
+                        <div class="skillbar-bg html">
+                            <div class="skillbar skillbar-hidden"></div>
+                        </div>
+                        <span class="andale uppercase">Css</span>
+                        <div class="skillbar-bg css">
+                            <div class="skillbar skillbar-hidden"></div>
+                        </div>
+                        <span class="andale uppercase">JavaScript</span>
+                        <div class="skillbar-bg javascript">
+                            <div class="skillbar skillbar-hidden"></div>
+                        </div>
+                        <span class="andale uppercase">Bootstrap</span>
+                        <div class="skillbar-bg bootstrap">
+                            <div class="skillbar skillbar-hidden"></div>
+                        </div>
+                        <span class="andale uppercase">PHP</span>
+                        <div class="skillbar-bg php">
+                            <div class="skillbar skillbar-hidden"></div>
+                        </div>
+                    </div>
+                    <div class="degree-container">
+                        <h3 class="content-subheading roboto">Associates of Applied Business</h3>
+                        <p class="andale">2021-2023</p>
+                        <p class="andale">Edison State Community College</p>
+                        <p class="andale">Major - Interactive Media</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="projects" class="section-padding">
+            <h2 class="section-subheading roboto uppercase">Projects</h2>
+            <div class="projects-content">
+                <div class="projects-content-container">
+                    <div class="projects-image-container">
+                        <img class="projects-image" alt="A graphic of a checkmark in the middle of a calendar and Tasky in a large black font next to it." src="images/projects/tasky.png" loading="lazy" />
+                    </div>
+                    <div class="projects-info">
+                        <div class="projects-heading-container">
+                            <h3 class="projects-content-heading roboto uppercase">Tasky</h3>
+                            <span class="andale uppercase">React, Css</span>
+                        </div>
+                        <p class="roboto">Tasky is a to-do list application built in React.js. Tasky allows the user to enter a task with a specified date and an optional description of the task. The user may add as many tasks as they would like and when they are finised with the task, they can delete the task. Tasky has a simple, functional UI. The input form for creating a task is a side bar allowing the input fields to be stacked vertically and efficiently use space. The tasks are then displayed in the remaining area in a grid like structure.
+                        </p>
+                        <a class="btn roboto uppercase bold" href="https://taskyreact.netlify.app/" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="projects-content-container">
+                    <div class="projects-image-container">
+                        <img class="projects-image" alt="A long view of a library with light brown books on black bookshelves with statues of philosphers lining the hall." src="images/projects/thestoics.jpg" loading="lazy" />
+                    </div>
+                    <div class="projects-info">
+                        <div class="projects-heading-container">
+                            <h3 class="projects-content-heading roboto uppercase">The Stoics</h3>
+                            <span class="andale uppercase">Html5, Css</span>
+                        </div>
+                        <p class="roboto">The Stoics is a simple yet stylistic site made using pure HTML and CSS. 
+                            The premise of the site is a club and is used to provide information on the club, 
+                            bring in new members, and post events. 
+                            The design has an elegant color pallete of dark reds mixed with tans and gold. 
+                            The Merriweather serif font provides a sense of structure and 
+                            reminds the viewer of the architecture of ancient Rome and Greece, 
+                            while the Mullish sans-serif font provides a touch of modernity.
+                        </p>
+                        <a class="btn roboto uppercase bold" href="https://codepen.io/Ben-Hillman/full/JjadobJ" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="projects-content-container">
+                    <div class="projects-image-container">
+                        <img class="projects-image" alt="The home page of my first portfolio, showcasing an image of me and a short description on the left with three links for other pages on the right." src="images/projects/portfolio-v1.png" loading="lazy" />
+                    </div>
+                    <div class="projects-info">
+                        <div class="projects-heading-container">
+                            <h3 class="projects-content-heading roboto uppercase">Portfolio V1</h3>
+                            <span class="andale uppercase">Html5, Css, JavaScript</span>
+                        </div>
+                        <p class="roboto">The portfolio you are viewing currently, builds on the foundation of my first portfolio iteration.
+                            I have used my first portfolio as a basis for learning and understanding what aspects of design work and don't work.
+                            A portfolio should be simple, yet appealing, which is why I chose clean, smooth fonts and 
+                            a quiet, complementary color scheme. Portfolio V1 was built on giving each section its own page so 
+                            the viewer may focus on the selected section.
+                        </p>
+                        <a class="btn roboto uppercase bold" href="https://ben-hillman.github.io/portfolio-v1/" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="contact" class="section-padding">
+            <h2 class="section-subheading roboto uppercase">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h3 class="content-subheading roboto">Let's Talk!</h3>
+                    <form class="contact-form" action="https://getform.io/f/63aec8d6-1de0-4d63-a146-6a700efee1d0" method="POST">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <textarea class="roboto" id="message" name="message" placeholder="Message" required></textarea>
+                        <input class="btn roboto uppercase bold" type="submit" id="submit" value="Send message" >
+                    </form>
+                </div>
+                <iframe class="map" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48821.18588669913!2d-83.78334384889745!3d40.11277984351419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883f486e4e07d623%3A0xddefdfe528cdbac4!2sUrbana%2C%20OH%2043078!5e0!3m2!1sen!2sus!4v1678248753296!5m2!1sen!2sus"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
     </main>
 </body>
 </html>
