@@ -28,16 +28,94 @@
     opacity: 0;
     filter: blur(3px);
 
-    transform: translateX(-100%);
-    transition: 3s cubic-bezier(.33,0,.47,1);
+    transition: 2s cubic-bezier(.33, 0, .47, 1);
 }
 
 .text-visible {
     opacity: 1;
     filter: blur(0);
+}
+
+/* Home content text animation */
+
+.home-content .text-hidden:nth-child(1) {
+    transform: translateY(-100%);
+}
+
+.home-content .text-hidden:nth-child(2) {
+    transform: translateX(-100%);
+}
+
+.home-content .text-hidden:nth-child(3) {
+    transform: translateX(100%);
+}
+
+.home-content .text-hidden:nth-child(4) {
+    transform: translateY(100%);
+}
+ 
+.home-content .text-visible:nth-child(1) {
+    transform: translateY(0);
+}
+
+.home-content .text-visible:nth-child(2) {
     transform: translateX(0);
 }
 
+.home-content .text-visible:nth-child(3) {
+    transform: translateX(0);
+}
+
+.home-content .text-visible:nth-child(4) {
+    transform: translateY(0);
+    transition-delay: 2.5s;
+    transition-property: opacity, filter, transform;
+}
+
+/* About content text animation */
+
+.about-content-info .text-hidden:nth-child(1) {
+    transform: translateX(-100%);
+}
+
+.about-content-info .text-hidden:nth-child(2) {
+    transform: translateY(50%);
+}
+
+.about-content-info .text-visible:nth-child(1) {
+    transform: translateX(0);
+}
+
+.about-content-info .text-visible:nth-child(2) {
+    transform: translateY(0);
+}
+
+/* Project content text animation */
+
+.projects-info .text-hidden:nth-child(2) {
+    transform: translateY(100%);
+}
+
+.projects-info .text-visible:nth-child(2) {
+    transform: translateY(0);
+}
+
+.projects-info .text-visible:nth-child(3) {
+    transition-delay: 2s;
+    transition-property: opacity, filter, transform;
+}
+
+/* Contact content text animation */
+
+.contact-form-container .text-hidden:nth-child(1) {
+    transform: translateX(-100%);
+}
+
+.contact-form-container .text-visible:nth-child(1) {
+    transform: translateX(0);
+}
+
+/*
 .home-content > .headshot-container {
     transition-delay: 100ms;
 }
@@ -54,6 +132,7 @@
     transition-delay: 4s;
     transition-property: opacity, filter, transform;
 }
+*/
 
 /* skillbar on scroll */
 
