@@ -211,11 +211,11 @@ h1 {
 }
 
 .roboto {
-    font-family: var(--roboto-font);
+    font-family: var(--roboto-font), sans-serif;
 }
 
 .andale {
-    font-family: var(--andale-font);
+    font-family: var(--andale-font), monospace;
 }
 
 .uppercase {
