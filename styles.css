@@ -115,25 +115,6 @@
     transform: translateX(0);
 }
 
-/*
-.home-content > .headshot-container {
-    transition-delay: 100ms;
-}
-
-.home-content > .main-heading {
-    transition-delay: 200ms;
-}
-
-.home-content > p {
-    transition-delay: 600ms;
-}
-
-.home-content > .btn {
-    transition-delay: 4s;
-    transition-property: opacity, filter, transform;
-}
-*/
-
 /* skillbar on scroll */
 
 .skillbar-hidden {
@@ -187,6 +168,10 @@ body {
     background-color: var(--bg-color);
 }
 
+main {
+    overflow-x: hidden;
+}
+
 .section-padding {
     padding: 3rem 2rem;
 }
@@ -199,8 +184,14 @@ hr {
 
 /* Text stlying */
 
-.main-heading {
+h1 {
     font-size: 3rem;
+}
+
+@media (max-width: 340px) {
+    h1 {
+        font-size: 2rem;
+    }
 }
 
 .section-subheading {
