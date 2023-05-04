@@ -276,8 +276,8 @@ h1 {
     --bg-color: hsl(0, 0%, 10%);
     --header-bg: hsl(0, 0%, 5%);
     --text-color: hsl(0, 0%, 95%);
-    --btn-bg: hsl(267, 95%, 76%);
-    --clock-shadow: hsl(258, 100%, 35%);
+    --btn-bg: hsl(267, 97%, 57%);
+/*     --clock-shadow: hsl(258, 100%, 35%); */
   }
 
   .moon {
