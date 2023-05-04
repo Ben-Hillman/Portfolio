@@ -711,3 +711,16 @@ textarea {
     min-height: 100%;
     border: 0;
 }
+
+/* Max width for monitor screen sizes */
+
+@media (min-width: 1440px) {
+    body {
+        display: grid;
+    }
+
+    main {
+        place-self: center;
+        max-width: 1440px;
+    }
+}
